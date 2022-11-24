@@ -8,7 +8,6 @@ import GridItem from "./common/GridItem";
 export default function Container() {
   const grids = useSelector(selectAllGrid);
 
-  console.log("grids: ", grids);
   return (
     <div className="container">
       {grids.map((item) => (

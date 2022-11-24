@@ -9,14 +9,22 @@ const gridsSlice = createSlice({
   initialState,
   reducers: {
     gridAdded(state, action) {
-      const { id, img } = action.payload;
+      const { id, img, was } = action.payload;
       const existingCard = state.find((card) => card.id === id);
-      if (existingCard) existingCard.img = img;
+      if (existingCard) {
+        existingCard.img = img;
+        existingCard.was = was;
+      }
+    },
+    gridDelete(state, action) {
+      const { id } = action.payload;
+      const existingGrid = state.find((card) => card.id === id);
+      if (existingGrid) existingGrid.img = null;
     },
   },
 });
 
-export const { gridAdded } = gridsSlice.actions;
+export const { gridAdded, gridDelete } = gridsSlice.actions;
 
 export const selectAllGrid = (state) => state.grids;
 

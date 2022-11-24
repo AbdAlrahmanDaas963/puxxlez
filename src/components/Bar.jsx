@@ -4,12 +4,18 @@ import { useSelector, useDispatch } from "react-redux";
 import { handeAdded } from "../features/hande/handeSlice";
 import { selectAllCards } from "../features/cards/cardsSlice";
 
+import { shuffle } from "d3-array";
+
 import Card from "./common/Card";
 
 export default function Bar() {
   const dispatch = useDispatch();
 
-  const cards = useSelector(selectAllCards);
+  let cards = useSelector(selectAllCards);
+
+  // ?
+  let arr = [1, 2, 3, 4, 5];
+  console.log(shuffle(arr));
 
   const handleClick = (item) => {
     console.log("first", item);

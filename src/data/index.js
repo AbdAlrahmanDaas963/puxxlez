@@ -53,4 +53,3 @@ export const hande = {
   select: {},
   target: {},
 };
-// const bar = cards;
