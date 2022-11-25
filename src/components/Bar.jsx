@@ -13,12 +13,12 @@ export default function Bar() {
 
   let cards = useSelector(selectAllCards);
 
-  // ?
+  // ? shuffle not done yet
   let arr = [1, 2, 3, 4, 5];
-  console.log(shuffle(arr));
+  // console.log(shuffle(arr));
 
   const handleClick = (item) => {
-    console.log("first", item);
+    // console.log("first", item);
     dispatch(
       handeAdded({ type: "select", cardId: item.id, cardImg: item.img })
     );

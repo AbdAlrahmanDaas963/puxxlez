@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { selectAllHande, handeFree } from "../../features/hande/handeSlice";
 import {
@@ -9,19 +9,12 @@ import {
 import { cardRemoved, cardRestored } from "../../features/cards/cardsSlice";
 
 export default function GridItem({ num, gridImg }) {
-  const [state, setState] = useState();
   const handes = useSelector(selectAllHande);
   const grids = useSelector(selectAllGrid);
   const dispatch = useDispatch();
 
-  const isDisabled = gridImg;
-
   const img = handes.select.cardImg;
   const cardId = handes.select.cardId;
-
-  useEffect(() => {
-    setState(cardId);
-  }, [cardId]);
 
   const handleClick = () => {
     dispatch(gridAdded({ id: num, img, was: cardId }));
@@ -37,9 +30,17 @@ export default function GridItem({ num, gridImg }) {
   };
 
   return (
-    <button disabled={isDisabled} onClick={handleClick} className="grid-item">
-      <img src={gridImg} alt="" width={"50px"} height={"50px"} />
-      <div onClick={handleDelete}>delete</div>
-    </button>
+    <div onClick={handleClick} className="">
+      <img
+        className="grid-img"
+        src={gridImg}
+        alt=""
+        width={"50px"}
+        height={"50px"}
+      />
+      <div className="grid-del" onClick={handleDelete}>
+        delete
+      </div>
+    </div>
   );
 }

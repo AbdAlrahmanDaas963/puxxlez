@@ -1,3 +1,8 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
@@ -12,6 +17,10 @@ code {
     monospace;
 }
 .App {
+  background-image: url("./data/assets/back/dark-back.png");
+  background-position: center;
+  background-size: cover;
+
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -19,18 +28,23 @@ code {
   justify-content: space-evenly;
 }
 .container {
-  width: 600px;
-  height: 300px;
-  border: 1px solid black;
+  background-image: url("./data/assets/back/board.png");
+  background-position: center;
+  background-size: auto;
+
+  width: fit-content;
+  height: fit-content;
+  /* border: 1px solid black; */
   display: grid;
   grid-template-columns: 20% 20% 20% 20% 20%;
   align-items: center;
   justify-items: center;
+  padding: 10px;
 }
 .bar {
   width: 900px;
   height: 70px;
-  border: 1px solid black;
+  background-color: rgb(9, 70, 9);
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -39,10 +53,23 @@ code {
 .card {
   width: 50px;
   height: 50px;
-  border: 1px solid black;
 }
 .grid-item {
-  width: 50px;
-  height: 50px;
-  border: 1px solid rgb(29, 29, 36);
+  width: 100px;
+  height: 100px;
+  position: relative;
+  background-color: rgba(0, 0, 0, 0.212);
+  /* border: 1px solid rgb(255, 3, 3); */
+}
+.grid-img {
+  background-color: rgba(0, 0, 0, 0);
+  width: 100%;
+  height: 100%;
+}
+.grid-img,
+.grid-del {
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: rgba(194, 91, 7, 0.808);
 }
