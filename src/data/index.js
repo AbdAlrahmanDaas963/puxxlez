@@ -1,3 +1,5 @@
+import { shuffle } from "d3-array";
+
 import zero from "./assets/numbers2/0.png";
 import one from "./assets/numbers2/1.png";
 import two from "./assets/numbers2/2.png";
@@ -51,7 +53,7 @@ export const grids = [
   { id: 14, img: null },
 ];
 
-export const cards = [
+const orderedcards = [
   { id: 0, img: numbers.zero, solved: false },
   { id: 1, img: numbers.one, solved: false },
   { id: 2, img: numbers.two, solved: false },
@@ -68,6 +70,8 @@ export const cards = [
   { id: 13, img: numbers.one_three, solved: false },
   { id: 14, img: numbers.one_four, solved: false },
 ];
+
+export const cards = shuffle(orderedcards);
 
 export const hande = {
   select: {},
