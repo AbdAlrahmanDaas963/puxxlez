@@ -1,6 +1,10 @@
 import React, { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { selectAllHande, handeFree } from "../../features/hande/handeSlice";
+import {
+  selectAllHande,
+  handeFree,
+  handeAdded,
+} from "../../features/hande/handeSlice";
 import {
   gridAdded,
   gridDelete,
@@ -17,9 +21,11 @@ export default function GridItem({ num, gridImg }) {
   const cardId = handes.select.cardId;
 
   const handleClick = () => {
-    dispatch(gridAdded({ id: num, img, was: cardId }));
-    dispatch(cardRemoved({ cardId }));
-    dispatch(handeFree());
+    if (!grids[num].img) {
+      dispatch(gridAdded({ id: num, img, was: cardId }));
+      dispatch(cardRemoved({ cardId }));
+      dispatch(handeFree());
+    }
   };
   const handleDelete = () => {
     const target = grids.find((item) => item.id === num);

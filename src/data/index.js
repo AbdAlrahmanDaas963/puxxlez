@@ -52,7 +52,6 @@ export const grids = [
 ];
 
 export const cards = [
-  // ? { id: 1, img: "url", solved: false, has: {} },
   { id: 0, img: numbers.zero, solved: false },
   { id: 1, img: numbers.one, solved: false },
   { id: 2, img: numbers.two, solved: false },

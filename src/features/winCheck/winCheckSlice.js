@@ -19,3 +19,9 @@ const winSlice = createSlice({
     },
   },
 });
+
+// export const { gridAdded, gridDelete } = winSlice.actions;
+
+export const selectAllWin = (state) => state.win;
+
+export default winSlice.reducer;

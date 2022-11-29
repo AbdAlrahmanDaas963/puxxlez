@@ -15,6 +15,11 @@ const gridsSlice = createSlice({
         existingCard.img = img;
         existingCard.was = was;
       }
+      if (existingCard.id === existingCard.was) {
+        existingCard.solved = true;
+      } else {
+        existingCard.solved = false;
+      }
     },
     gridDelete(state, action) {
       const { id } = action.payload;

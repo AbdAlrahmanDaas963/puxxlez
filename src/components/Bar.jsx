@@ -12,10 +12,19 @@ export default function Bar() {
   const dispatch = useDispatch();
 
   let cards = useSelector(selectAllCards);
+  let renderCards = [];
 
-  // ? shuffle not done yet
-  let arr = [1, 2, 3, 4, 5];
-  // console.log(shuffle(arr));
+  //
+  let ids = [];
+  for (let i = 0; i < 15; i++) {
+    ids.push(i);
+  }
+  shuffle(ids);
+  for (let i = 0; i < 15; i++) {
+    console.log(cards[ids[i]]);
+    renderCards.push(cards[ids[i]]);
+  }
+  //
 
   const handleClick = (item) => {
     // console.log("first", item);
@@ -26,7 +35,7 @@ export default function Bar() {
 
   return (
     <div className="bar">
-      {cards.map((item) => (
+      {renderCards.map((item) => (
         <div onClick={() => handleClick(item)} key={item.id}>
           <Card num={item.id} img={item.img} />
         </div>

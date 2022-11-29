@@ -10,15 +10,15 @@ export default function Container() {
   const grids = useSelector(selectAllGrid);
   const length = grids.length;
 
-  console.log("counter", counter);
-  console.log("length", length);
+  // console.log("counter", counter);
+  // console.log("length", length);
 
-  if (counter === length) {
-    console.log("all Complate");
-  } else {
-    console.log("not yet");
-    // setCounter(0);
-  }
+  // if (counter === length) {
+  //   console.log("all Complate");
+  // } else {
+  //   console.log("not yet");
+  //   // setCounter(0);
+  // }
 
   const checkWin = () => {
     // ? move it to its slice
