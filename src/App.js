@@ -5,6 +5,7 @@ import "./App.css";
 
 import Container from "./components/Container";
 import Bar from "./components/Bar";
+import BackGround from "./components/BackGround";
 
 function App() {
   const grids = useSelector(selectAllGrid);
@@ -21,8 +22,11 @@ function App() {
 
   return (
     <div className="App">
-      <Container />
-      <Bar />
+      <BackGround />
+      <div className="game">
+        <Container />
+        <Bar />
+      </div>
     </div>
   );
 }

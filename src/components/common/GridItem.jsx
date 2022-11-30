@@ -1,10 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
 import { useSelector, useDispatch } from "react-redux";
-import {
-  selectAllHande,
-  handeFree,
-  handeAdded,
-} from "../../features/hande/handeSlice";
+import { selectAllHande, handeFree } from "../../features/hande/handeSlice";
 import {
   gridAdded,
   gridDelete,
@@ -45,7 +41,7 @@ export default function GridItem({ num, gridImg }) {
         height={"50px"}
       />
       <div className="grid-del" onClick={handleDelete}>
-        delete
+        d
       </div>
     </div>
   );
