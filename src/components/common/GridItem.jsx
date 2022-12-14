@@ -25,7 +25,10 @@ export default function GridItem({ num, gridImg }) {
   };
   const handleDelete = () => {
     const target = grids.find((item) => item.id === num);
-
+    // ? by salem
+    if (grids[target.id].img === null) {
+      return;
+    }
     dispatch(handeFree());
     dispatch(gridDelete({ id: num }));
     dispatch(cardRestored({ id: target.was, img: gridImg, solved: false }));

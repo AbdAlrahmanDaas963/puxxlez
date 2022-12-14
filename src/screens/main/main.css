@@ -1,0 +1,35 @@
+.main {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  min-height: 600px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.main .back-ground {
+  position: absolute !important;
+}
+.big-header {
+  /* border: 1px solid blue; */
+  width: 100%;
+  height: 80%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.main-btns {
+  width: 100%;
+  height: 20%;
+  /* border: 1px solid red; */
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.main-btns .pix-btn {
+  margin: 5px 0;
+}

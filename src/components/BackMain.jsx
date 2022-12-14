@@ -1,12 +1,12 @@
 import React from "react";
 import { motion } from "framer-motion";
 
-import img1 from "../data/assets/back/dark/1.png";
-import img2 from "../data/assets/back/dark/2.png";
-import img3 from "../data/assets/back/dark/3.png";
-import img4 from "../data/assets/back/dark/4.png";
+import img1 from "../data/assets/back/main/1.png";
+import img2 from "../data/assets/back/main/2.png";
+import img3 from "../data/assets/back/main/3.png";
+import img4 from "../data/assets/back/main/4.png";
 
-function BackGround() {
+function BackMain() {
   return (
     <div className="back-ground">
       <img
@@ -41,4 +41,4 @@ function BackGround() {
   );
 }
 
-export default BackGround;
+export default BackMain;

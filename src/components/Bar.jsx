@@ -1,10 +1,8 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 
 import { useSelector, useDispatch } from "react-redux";
 import { handeAdded } from "../features/hande/handeSlice";
 import { selectAllCards } from "../features/cards/cardsSlice";
-
-import { shuffle } from "d3-array";
 
 import Card from "./common/Card";
 

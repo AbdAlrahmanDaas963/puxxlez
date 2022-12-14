@@ -3,18 +3,22 @@
   padding: 0;
   box-sizing: border-box;
 }
-
+a {
+  text-decoration: none;
+  color: inherit;
+}
 button {
   border: 0px;
 }
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+  /* font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  -moz-osx-font-smoothing: grayscale; */
   overflow-x: hidden;
+  font-family: "VT323", monospace;
 }
 
 code {
@@ -104,4 +108,61 @@ code {
   left: 0;
   top: 0;
   color: rgba(194, 91, 7, 0.808);
+}
+
+.components {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 100px 0;
+}
+.pix-btn {
+  position: relative;
+  width: 200px;
+  height: 50px;
+
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
+}
+.pix-btn-back,
+.pix-btn-body,
+.pix-btn-arrow {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.pix-btn-body {
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 30px;
+  text-transform: uppercase;
+}
+.pix-btn-arrow {
+  left: -20px;
+  top: 50%;
+  transform: translateY(-50%);
+  opacity: 0;
+}
+.pix-btn-body {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 50%;
+}
+
+.back-img3 {
+  animation: back 3s infinite;
+  transition: cubic-bezier(0, 0, 0, 0);
+}
+
+@keyframes back {
+  from {
+    left: 0px;
+  }
+  to {
+    left: 10px;
+  }
 }
