@@ -2,7 +2,11 @@ import { createSlice } from "@reduxjs/toolkit";
 
 import { cards } from "../../data";
 
-const initialState = cards;
+import { allLevels } from "../../data/imges";
+
+console.log(allLevels);
+
+const initialState = allLevels[0];
 
 const cardsSlice = createSlice({
   name: "cards",
@@ -10,7 +14,6 @@ const cardsSlice = createSlice({
   reducers: {
     cardRemoved(state, action) {
       const { cardId } = action.payload;
-      // const existingCard = state.find((card) => card.id === cardId);
       return state.filter((todo) => todo.id !== cardId);
     },
     cardRestored(state, action) {

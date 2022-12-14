@@ -10,7 +10,6 @@ import six from "./assets/numbers2/6.png";
 import seven from "./assets/numbers2/7.png";
 import eight from "./assets/numbers2/8.png";
 import nine from "./assets/numbers2/9.png";
-
 import ten from "./assets/numbers2/10.png";
 import one_one from "./assets/numbers2/11.png";
 import one_two from "./assets/numbers2/12.png";
