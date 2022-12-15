@@ -1,12 +1,9 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-import { cards } from "../../data";
+import { lvl0 } from "../../data/imges";
+import { lvl1 } from "../../data/imges";
 
-import { allLevels } from "../../data/imges";
-
-console.log(allLevels);
-
-const initialState = allLevels[0];
+const initialState = lvl1;
 
 const cardsSlice = createSlice({
   name: "cards",
@@ -19,11 +16,27 @@ const cardsSlice = createSlice({
     cardRestored(state, action) {
       state.push(action.payload);
     },
+    render(state, action) {
+      const lvl = action.payload;
+      switch (lvl) {
+        case 0:
+          return lvl0;
+          break;
+        case 1:
+          return lvl1;
+          break;
+
+        default:
+          return lvl1;
+          break;
+      }
+    },
   },
 });
 
-export const { cardRemoved, cardRestored } = cardsSlice.actions;
+export const { cardRemoved, cardRestored, render } = cardsSlice.actions;
 
 export const selectAllCards = (state) => state.cards;
+export const selectSelectedLevel = (state) => state.cards.level;
 
 export default cardsSlice.reducer;
