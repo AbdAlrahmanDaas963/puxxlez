@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import { useSelector } from "react-redux";
 import { selectAllGrid } from "./features/grid/gridSlice";
 import "./App.css";
