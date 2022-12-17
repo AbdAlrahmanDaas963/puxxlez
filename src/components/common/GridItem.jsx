@@ -26,7 +26,7 @@ export default function GridItem({ num, gridImg }) {
   const handleDelete = () => {
     const target = grids.find((item) => item.id === num);
     // ? by salem
-    if (grids[target.id].img === null) {
+    if (grids[target.id].img === null || img) {
       return;
     }
     dispatch(handeFree());
@@ -42,10 +42,8 @@ export default function GridItem({ num, gridImg }) {
         alt=""
         width={"50px"}
         height={"50px"}
+        onClick={handleDelete}
       />
-      <div className="grid-del" onClick={handleDelete}>
-        d
-      </div>
     </div>
   );
 }

@@ -1,5 +1,6 @@
 import React from "react";
 
+import img from "../data/assets/back/bar.png";
 import { useSelector, useDispatch } from "react-redux";
 import { handeAdded } from "../features/hande/handeSlice";
 import { selectAllCards } from "../features/cards/cardsSlice";
@@ -18,11 +19,14 @@ export default function Bar() {
 
   return (
     <div className="bar">
-      {cards.map((item) => (
-        <div onClick={() => handleClick(item)} key={item.id}>
-          <Card num={item.id} img={item.img} />
-        </div>
-      ))}
+      <img src={img} alt="" className="bar-img" />
+      <div className="bar-content">
+        {cards.map((item) => (
+          <div onClick={() => handleClick(item)} key={item.id}>
+            <Card num={item.id} img={item.img} />
+          </div>
+        ))}
+      </div>
     </div>
   );
 }

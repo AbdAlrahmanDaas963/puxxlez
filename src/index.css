@@ -26,7 +26,7 @@ code {
     monospace;
 }
 .back-ground {
-  width: 100vw;
+  width: 2000px;
   height: 100vh;
 
   position: relative;
@@ -57,6 +57,13 @@ code {
   align-items: center;
   justify-content: space-evenly;
 }
+.card-level {
+  background-image: url("./data/assets/back/board.png");
+  background-position: center;
+  background-size: auto;
+
+  padding: 5px;
+}
 .container {
   background-image: url("./data/assets/back/board.png");
   background-position: center;
@@ -72,16 +79,54 @@ code {
   padding: 10px;
 }
 .bar {
+  position: relative;
   width: 900px;
-  height: 70px;
-  background-color: rgb(9, 70, 9);
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  overflow: hidden;
+}
+.bar-img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  z-index: -1;
+}
+.bar-content {
+  width: 660px;
+  height: 170px;
   display: flex;
   flex-direction: row;
   align-items: center;
+  overflow-x: scroll;
 }
+
+/* scroll bar */
+
+.bar-content::-webkit-scrollbar {
+  height: 9px;
+}
+/* Track */
+.bar-content::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.356);
+}
+/* Handle */
+.bar-content::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background: white;
+}
+/* Handle on hover */
+.bar-content::-webkit-scrollbar-thumb:hover {
+  background: white;
+  /* box-shadow: 0 0 5px white; */
+  border-radius: 10px;
+}
+
 .card {
-  width: 50px;
-  height: 50px;
+  width: 100px;
+  height: 100px;
   margin: 0 5px;
 }
 .grid-item {
@@ -90,6 +135,9 @@ code {
   position: relative;
   background-color: rgba(0, 0, 0, 0.212);
   /* border: 1px solid rgb(255, 3, 3); */
+}
+.card:hover {
+  cursor: pointer;
 }
 .grid-img[src] {
   opacity: 1;
@@ -154,15 +202,40 @@ code {
 }
 
 .back-img3 {
-  animation: back 3s infinite;
+  animation: back3 3s infinite;
+  transition: cubic-bezier(0, 0, 0, 0);
+}
+.back-img4 {
+  animation: back2 3s infinite;
   transition: cubic-bezier(0, 0, 0, 0);
 }
 
-@keyframes back {
-  from {
+@keyframes back3 {
+  0% {
     left: 0px;
   }
-  to {
+  50% {
     left: 10px;
   }
+  100% {
+    left: 0px;
+  }
+}
+@keyframes back2 {
+  0% {
+    left: 5px;
+  }
+  50% {
+    left: 0px;
+  }
+  100% {
+    left: 5px;
+  }
+}
+
+.settings {
+  position: absolute;
+  left: 50px;
+  top: 50px;
+  z-index: 2;
 }

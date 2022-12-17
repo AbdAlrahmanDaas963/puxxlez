@@ -7,7 +7,7 @@
   display: grid;
   grid-template-columns: auto auto auto;
   align-items: center;
-  justify-items: center;
+  justify-items: end;
 }
 .levels .back-ground {
   position: absolute !important;
