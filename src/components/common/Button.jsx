@@ -22,6 +22,9 @@ function Button({ title, icon }) {
       // filter: "contrast(100%)",
     },
   };
+  const classs = icon ? "space-between" : "";
+  const bodyClassName = `pix-btn-body ${classs}`;
+
   return (
     <motion.div
       whileHover={() => setIshover("true")}
@@ -114,7 +117,7 @@ function Button({ title, icon }) {
         variants={bodyVar}
         animate={isclicked}
         transition={{ duration: 0 }}
-        className="pix-btn-body"
+        className={bodyClassName}
       >
         {icon && <div className="pix-btn-text">{icon}</div>}
 

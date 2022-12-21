@@ -186,6 +186,12 @@ code {
   transform: translate(-50%, -50%);
   font-size: 30px;
   text-transform: uppercase;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 50%;
 }
 .pix-btn-arrow {
   left: -20px;
@@ -193,14 +199,10 @@ code {
   transform: translateY(-50%);
   opacity: 0;
 }
-.pix-btn-body {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  width: 50%;
+.space-between{
+  justify-content: space-between;
+  
 }
-
 .back-img3 {
   animation: back3 3s infinite;
   transition: cubic-bezier(0, 0, 0, 0);
