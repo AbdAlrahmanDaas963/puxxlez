@@ -1,7 +1,6 @@
 import { useEffect } from "react";
 import { useSelector } from "react-redux";
 import { selectAllGrid } from "./features/grid/gridSlice";
-import "./App.css";
 
 import Container from "./components/Container";
 import Bar from "./components/Bar";
@@ -21,7 +20,7 @@ function App() {
   }, [result]);
 
   return (
-    <div className="App">
+    <div className="App lock-scroll">
       <BackGround />
       <div className="game">
         <Container />

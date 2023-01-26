@@ -15,7 +15,7 @@ function Main() {
     setIspop(!pop);
   };
   return (
-    <div className="main">
+    <div className="main lock-scroll">
       <Popup pop={ispop} />
       <Settings click={handleClick} />
       <BackMain />

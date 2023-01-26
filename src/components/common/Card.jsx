@@ -1,10 +1,15 @@
 import React from "react";
+import { motion } from "framer-motion";
 
-export default function Card({ num, img }) {
+export default function Card({ img }) {
   return (
-    <div className="card">
+    <motion.div
+      whileHover={{ scale: 1.1 }}
+      whileTap={{ scale: 0.9 }}
+      transition={{ easings: "ease", duration: "0.1" }}
+      className="card"
+    >
       <img src={img} alt="" width={"100%"} height={"100%"} />
-      <p>{num}</p>
-    </div>
+    </motion.div>
   );
 }

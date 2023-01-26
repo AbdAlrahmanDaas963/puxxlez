@@ -1,5 +1,4 @@
 const size = "20px";
-const height = "20px";
 
 const resume = (
   <svg

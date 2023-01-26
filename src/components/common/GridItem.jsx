@@ -1,4 +1,5 @@
 import React from "react";
+import { motion } from "framer-motion";
 import { useSelector, useDispatch } from "react-redux";
 import { selectAllHande, handeFree } from "../../features/hande/handeSlice";
 import {
@@ -25,7 +26,7 @@ export default function GridItem({ num, gridImg }) {
   };
   const handleDelete = () => {
     const target = grids.find((item) => item.id === num);
-    // ? by salem
+
     if (grids[target.id].img === null || img) {
       return;
     }
@@ -34,9 +35,12 @@ export default function GridItem({ num, gridImg }) {
     dispatch(cardRestored({ id: target.was, img: gridImg, solved: false }));
   };
 
+  const scale = gridImg ? 1 : 0;
   return (
-    <div onClick={handleClick} className="">
-      <img
+    <div onClick={handleClick} className="grid-item-in">
+      <motion.img
+        animate={{ scale }}
+        transition={{ easings: "ease", duration: "0.1" }}
         className="grid-img"
         src={gridImg}
         alt=""

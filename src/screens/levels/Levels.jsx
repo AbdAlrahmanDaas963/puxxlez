@@ -12,7 +12,7 @@ function Levels() {
     { id: 1, img: lvl1 },
   ];
   return (
-    <div className="levels">
+    <div className="levels lock-scroll">
       <BackMain />
 
       {levels.map((item) => (
